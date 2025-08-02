@@ -1,0 +1,6 @@
+artifact_location: file:///C:/App/BitsMLOps/BitsMLOps/models/mlruns/565482707616561056
+creation_time: 1754128105558
+experiment_id: '565482707616561056'
+last_update_time: 1754128105558
+lifecycle_stage: active
+name: California_Housing_Regression

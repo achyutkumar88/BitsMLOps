@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/App/BitsMLOps/BitsMLOps/models/mlruns/565482707616561056/ad25baa9c0ca4b199e3807d5b37aa12e/artifacts
+end_time: 1754128121152
+entry_point_name: ''
+experiment_id: '565482707616561056'
+lifecycle_stage: active
+run_id: ad25baa9c0ca4b199e3807d5b37aa12e
+run_name: DecisionTree
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754128115523
+status: 3
+tags: []
+user_id: achyu

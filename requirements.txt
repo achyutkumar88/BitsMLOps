@@ -1,3 +1,8 @@
 mlflow
 scikit-learn
 pandas
+fastapi
+uvicorn
+mlflow
+scikit-learn
+pydantic

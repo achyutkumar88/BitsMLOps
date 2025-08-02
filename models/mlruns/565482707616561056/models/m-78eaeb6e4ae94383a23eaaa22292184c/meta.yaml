@@ -1,0 +1,10 @@
+artifact_location: file:///C:/App/BitsMLOps/BitsMLOps/models/mlruns/565482707616561056/models/m-78eaeb6e4ae94383a23eaaa22292184c/artifacts
+creation_timestamp: 1754128115719
+experiment_id: '565482707616561056'
+last_updated_timestamp: 1754128121135
+model_id: m-78eaeb6e4ae94383a23eaaa22292184c
+model_type: null
+name: model
+source_run_id: ad25baa9c0ca4b199e3807d5b37aa12e
+status: 2
+status_message: null
