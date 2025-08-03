@@ -32,7 +32,7 @@ jobs:
       #  run: pytest tests/
 
       - name: Build Docker image
-        run: docker build -t achyut/prediction:latest .
+        run: docker build -t achyutkumar88/prediction:latest .
 
       - name: Push to DockerHub
         env:
