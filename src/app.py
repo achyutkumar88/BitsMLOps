@@ -1,24 +1,36 @@
 # app.py
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+from schema.housing_input import HousingInput
 import mlflow.pyfunc
 import numpy as np
 from typing import List
+from src.logger import log_request
+from src.monitoring.prometheus_metrics import setup_prometheus, prediction_counter
+from contextlib import asynccontextmanager
 
 # Local path to MLflow model (adjust if needed)
-MODEL_PATH = "/app/models/mlruns/565482707616561056/models/m-352f75c998244a0a8c1f594cf5d6d7cb/artifacts"
+#MODEL_PATH = "/app/models/mlruns/565482707616561056/models/m-352f75c998244a0a8c1f594cf5d6d7cb/artifacts"
+MODEL_PATH = "C:/App/BitsMLOps/BitsMLOps/models/mlruns/565482707616561056/models/m-352f75c998244a0a8c1f594cf5d6d7cb/artifacts"
 
 
 # Load model from local path
 model = mlflow.pyfunc.load_model(MODEL_PATH)
 
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    setup_prometheus(app)
+    yield
+
 
 # Define FastAPI app
 app = FastAPI(title="California Housing Price Predictor")
 
+setup_prometheus(app)
+
 # Input schema (for one or more samples)
-class HousingInput(BaseModel):
-    features: List[List[float]]  # List of feature lists
+#class HousingInput(BaseModel):
+#    features: List[List[float]]  # List of feature lists
+
 
 @app.get("/")
 def read_root():
@@ -30,6 +42,7 @@ def predict_price(input_data: HousingInput):
         print("Request received -------------->")
         input_array = np.array(input_data.features)
         predictions = model.predict(input_array)
+        log_request(input_data.model_dump_json(), predictions.tolist())
         print("Request Processed -------------->")
         return {"predictions": predictions.tolist()}
     except Exception as e:

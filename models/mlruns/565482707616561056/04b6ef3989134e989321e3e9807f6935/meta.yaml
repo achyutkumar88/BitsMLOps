@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/App/BitsMLOps/BitsMLOps/models/mlruns/565482707616561056/04b6ef3989134e989321e3e9807f6935/artifacts
+end_time: 1754629813323
+entry_point_name: ''
+experiment_id: '565482707616561056'
+lifecycle_stage: active
+run_id: 04b6ef3989134e989321e3e9807f6935
+run_name: LinearRegression
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754629805750
+status: 3
+tags: []
+user_id: achyu

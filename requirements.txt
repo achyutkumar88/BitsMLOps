@@ -6,3 +6,5 @@ uvicorn
 mlflow
 scikit-learn
 pydantic
+prometheus_fastapi_instrumentator
+prometheus_client

@@ -1,0 +1,22 @@
+artifact_path: file:///C:/App/BitsMLOps/BitsMLOps/models/mlruns/565482707616561056/models/m-241c35e85784432db91ba073f6eae771/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.9.7
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.1
+mlflow_version: 3.1.4
+model_id: m-241c35e85784432db91ba073f6eae771
+model_size_bytes: 532
+model_uuid: m-241c35e85784432db91ba073f6eae771
+prompts: null
+run_id: 48c28528a3514a30b1a6ddf9502ac002
+utc_time_created: '2025-08-08 05:11:03.847314'
