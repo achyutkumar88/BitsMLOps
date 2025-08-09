@@ -10,7 +10,6 @@ from contextlib import asynccontextmanager
 # Local path to MLflow model (adjust if needed)
 core_path = "/app/models/mlruns/565482707616561056/models/"
 MODEL_PATH = core_path+"m-352f75c998244a0a8c1f594cf5d6d7cb/artifacts"
-# MODEL_PATH = "C:/App/BitsMLOps/BitsMLOps/models/mlruns/565482707616561056/models/m-352f75c998244a0a8c1f594cf5d6d7cb/artifacts"
 
 
 # Load model from local path
@@ -27,7 +26,6 @@ async def lifespan(app: FastAPI):
 app = FastAPI(title="California Housing Price Predictor")
 
 setup_prometheus(app)
-
 
 
 @app.get("/")
