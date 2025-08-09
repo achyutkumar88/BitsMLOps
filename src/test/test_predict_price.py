@@ -2,14 +2,20 @@ import sys
 import os
 from unittest.mock import patch
 import numpy as np
+from src.app import app
+from fastapi.testclient import TestClient
 
 
 # Add src directory to sys.path for imports
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
-
-from src.app import app
-from fastapi.testclient import TestClient
+sys.path.insert(
+    0,
+    os.path.abspath(
+        os.path.join(
+            os.path.dirname(__file__),
+            "..",
+        )
+    ),
+)
 
 
 client = TestClient(app)
