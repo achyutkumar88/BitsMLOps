@@ -1,12 +1,12 @@
 # schema/housing_input.py
 
 from pydantic import BaseModel, Field, model_validator
-from typing import List
+from typing import List, ClassVar
 
 
 class HousingInput(BaseModel):
-    desc = "List of samples, each with 8 float features"
-    features: List[List[float]] = Field(..., description=desc)
+    desc: ClassVar[str] = "samples, with 8 float features"
+    features: List[List[float]]
 
     @model_validator(mode='before')
     def check_feature_shape(cls, values):
