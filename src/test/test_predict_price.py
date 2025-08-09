@@ -2,7 +2,7 @@ import sys
 import os
 from unittest.mock import patch
 import numpy as np
-from src.app import app
+from app import app
 from fastapi.testclient import TestClient
 
 
