@@ -3,7 +3,7 @@ from fastapi import FastAPI, HTTPException
 from schema.housing_input import HousingInput
 import mlflow.pyfunc
 import numpy as np
-from src.logger import log_request
+from logger import log_request
 from monitoring.prometheus_metrics import setup_prometheus
 from contextlib import asynccontextmanager
 
