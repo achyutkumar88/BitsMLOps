@@ -8,3 +8,7 @@ scikit-learn
 pydantic
 prometheus_fastapi_instrumentator
 prometheus_client
+flake8
+pytest
+numpy
+httpx

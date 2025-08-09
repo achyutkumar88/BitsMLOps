@@ -5,7 +5,7 @@ import mlflow.pyfunc
 import numpy as np
 from typing import List
 from src.logger import log_request
-from src.monitoring.prometheus_metrics import setup_prometheus, prediction_counter
+from monitoring.prometheus_metrics import setup_prometheus, prediction_counter
 from contextlib import asynccontextmanager
 
 # Local path to MLflow model (adjust if needed)

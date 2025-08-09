@@ -25,11 +25,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      #- name: Lint code
-      #  run: flake8 src/
+      - name: Lint code
+        run: flake8 src/
 
-      #- name: Run tests
-      #  run: pytest tests/
+      - name: Run tests
+        run: pytest tests/
 
       - name: Build Docker image
         run: docker build -t achyutkumar88/prediction:latest .
