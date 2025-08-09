@@ -28,8 +28,12 @@ jobs:
       - name: Lint code
         run: flake8 src/
 
+      #- name: Run tests
+      #  run: pytest src/test/
+
       - name: Run tests
-        run: pytest src/test/
+        run: |
+          PYTHONPATH=src pytest src/test/ --maxfail=1 --disable-warnings -q
 
       - name: Build Docker image
         run: docker build -t achyutkumar88/prediction:latest .
