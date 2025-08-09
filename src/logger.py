@@ -1,6 +1,7 @@
 import json
 from datetime import datetime
 
+
 def log_request(inputs, prediction):
     log_entry = {
         "timestamp": datetime.utcnow().isoformat(),
