@@ -2,12 +2,15 @@ import sys
 import os
 from unittest.mock import patch
 import numpy as np
-from fastapi.testclient import TestClient
+
 
 # Add src directory to sys.path for imports
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from src.app import app  # noqa: E402
+
+from src.app import app
+from fastapi.testclient import TestClient
+
 
 client = TestClient(app)
 predict_path = "src.app.model.predict"
