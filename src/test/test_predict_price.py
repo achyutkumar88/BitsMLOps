@@ -34,6 +34,7 @@ with patch("app.mlflow.pyfunc.load_model") as mock_loader:
 
 
 def test_predict_success():
-    response = client.post("/predict", json={"features": [[1, 2, 3, 4, 5, 6, 7, 8]]})
+    payload = {"features": [[1, 2, 3, 4, 5, 6, 7, 8]]}
+    response = client.post("/predict", json=payload)
     assert response.status_code == 200
     assert response.json() == {"predictions": [123.45]}
