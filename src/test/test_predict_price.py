@@ -17,6 +17,12 @@ sys.path.insert(
 )
 
 
+with patch("mlflow.pyfunc.load_model") as mock_load_model:
+    mock_model = MagicMock()
+    mock_model.predict.return_value = [123.45]  
+    mock_load_model.return_value = mock_model
+
+
 client = TestClient(app)
 predict_path = "src.app.model.predict"
 
@@ -25,12 +31,6 @@ def test_root():
     response = client.get("/")
     assert response.status_code == 200
     assert response.json() == {"message": "Hello"}
-
-
-with patch("app.mlflow.pyfunc.load_model") as mock_loader:
-    mock_model = MagicMock()
-    mock_model.predict.return_value = [123.45]  # sample prediction
-    mock_loader.return_value = mock_model
 
 
 def test_predict_success():
