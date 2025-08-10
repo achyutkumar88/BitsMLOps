@@ -44,3 +44,4 @@ def predict_price(input_data: HousingInput):
         return {"predictions": predictions.tolist()}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
