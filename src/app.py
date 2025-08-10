@@ -1,10 +1,10 @@
 # app.py
 from fastapi import FastAPI, HTTPException
-from schema.housing_input import HousingInput
+from src.schema.housing_input import HousingInput
 import mlflow.pyfunc
 import numpy as np
-from logger import log_request
-from monitoring.prometheus_metrics import setup_prometheus
+from src.logger import log_request
+from src.monitoring.prometheus_metrics import setup_prometheus
 from contextlib import asynccontextmanager
 
 # Local path to MLflow model (adjust if needed)
