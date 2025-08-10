@@ -44,7 +44,6 @@ def test_root():
 
 def test_predict():
     response = client.post(
-    "/predict",
-    json={"features": [[1, 2, 3, 4, 5, 6, 7, 8]]})
+    "/predict", json={"features": [[1, 2, 3, 4, 5, 6, 7, 8]]})
     assert response.status_code == 200
     assert "predictions" in response.json()
