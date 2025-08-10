@@ -11,8 +11,6 @@ mock_load_model.return_value = mock_model
 
 import sys
 import os
-from app import app
-from fastapi.testclient import TestClient
 
 
 # Add src directory to sys.path for imports
@@ -25,6 +23,9 @@ sys.path.insert(
         )
     ),
 )
+
+from app import app
+from fastapi.testclient import TestClient
 
 
 client = TestClient(app)
