@@ -19,7 +19,7 @@ sys.path.insert(
 
 with patch("mlflow.pyfunc.load_model") as mock_load_model:
     mock_model = MagicMock()
-    mock_model.predict.return_value = [123.45]  
+    mock_model.predict.return_value = [123.45]
     mock_load_model.return_value = mock_model
 
 
