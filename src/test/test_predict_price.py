@@ -1,8 +1,18 @@
+from unittest.mock import patch, MagicMock
+
+
+# Patch mlflow.pyfunc.load_model before app imports it
+patcher = patch("mlflow.pyfunc.load_model")
+mock_load_model = patcher.start()
+mock_model = MagicMock()
+mock_model.predict.return_value = [123.45]
+mock_load_model.return_value = mock_model
+
+
 import sys
 import os
 from app import app
 from fastapi.testclient import TestClient
-from unittest.mock import patch, MagicMock
 
 
 # Add src directory to sys.path for imports
@@ -17,13 +27,12 @@ sys.path.insert(
 )
 
 
-with patch("mlflow.pyfunc.load_model") as mock_load_model:
-    mock_model = MagicMock()
-    mock_model.predict.return_value = [123.45]
-    mock_load_model.return_value = mock_model
-
-
 client = TestClient(app)
+
+def teardown_module(module):
+    patcher.stop()
+
+
 predict_path = "src.app.model.predict"
 
 

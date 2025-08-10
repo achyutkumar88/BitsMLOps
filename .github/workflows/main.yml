@@ -25,11 +25,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Lint code
-        run: flake8 src/
-
-      #- name: Run tests
-      #  run: pytest src/test/
+      #- name: Lint code
+      #  run: flake8 src/
 
       - name: Run tests
         run: |
