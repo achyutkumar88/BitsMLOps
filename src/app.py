@@ -8,7 +8,7 @@ from monitoring.prometheus_metrics import setup_prometheus
 from contextlib import asynccontextmanager
 
 # Local path to MLflow model (adjust if needed)
-core_path = "/app/models/mlruns/565482707616561056/models/"
+core_path = "models/mlruns/565482707616561056/models/"
 MODEL_PATH = core_path+"m-352f75c998244a0a8c1f594cf5d6d7cb/artifacts"
 
 
